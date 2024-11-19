@@ -8,12 +8,13 @@ const CreatePage = () => {
 		price: "",
 		image: "",
 	});
+
 	const toast = useToast();
 
-	const { createProduct } = useProductStore();
 
+	const {createProduct} = useProductStore();
 	const handleAddProduct = async () => {
-		const { success, message } = await createProduct(newProduct);
+		const {success, message} = await createProduct(newProduct);
 		if (!success) {
 			toast({
 				title: "Error",
@@ -29,7 +30,7 @@ const CreatePage = () => {
 				isClosable: true,
 			});
 		}
-		setNewProduct({ name: "", price: "", image: "" });
+		setNewProduct({name: "", price: "", image: ""});
 	};
 
 	return (
